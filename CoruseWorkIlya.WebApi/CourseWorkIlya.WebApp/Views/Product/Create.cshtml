@@ -1,0 +1,83 @@
+﻿@model ProductCreateVM
+
+<form method="post" asp-action="Create">
+    <div class="border p-3">
+        <div class="form-group row">
+            <h2 class="text-primary pl-3">Add Product</h2>
+        </div>
+        <div class="row">
+            <div class="col-8">
+                <div class="form-group row">
+                    <div class="col-4">
+                        <label asp-for="ProductCreateModel.Name"></label>
+                    </div>
+                    <div class="col-8 py-2">
+                        <input asp-for="ProductCreateModel.Name" class="form-control" />
+                        <span asp-validation-for="ProductCreateModel.Name" class="text-danger"></span>
+                    </div>
+                    
+                    <div class="col-4">
+                        <label asp-for="ProductCreateModel.Price"></label>
+                    </div>
+                    <div class="col-8 py-2">
+                        <input asp-for="ProductCreateModel.Price" class="form-control" />
+                        <span asp-validation-for="ProductCreateModel.Price" class="text-danger"></span>
+                    </div>
+
+                    <div class="col-4">
+                        <label asp-for="ProductCreateModel.Description"></label>
+                    </div>
+                    <div class="col-8 py-2">
+                        <textarea asp-for="ProductCreateModel.Description" class="form-control summernote"></textarea>
+                        <span asp-validation-for="ProductCreateModel.Description" class="text-danger"></span>
+                    </div>
+
+                    <div class="col-4">
+                        <label asp-for="ProductCreateModel.Rate"></label>
+                    </div>
+                    <div class="col-8 py-2">
+                        <input asp-for="ProductCreateModel.Rate" class="form-control" />
+                        <span asp-validation-for="ProductCreateModel.Rate" class="text-danger"></span>
+                    </div>
+
+                    <div class="col-4">
+                        <label asp-for="ProductCreateModel.CategoryId"></label>
+                    </div>
+                    <div class="col-8 py-2">
+                        <select asp-for="ProductCreateModel.CategoryId" asp-items="@Model.CategoryListItems" class="form-control">
+                            <option disabled selected>--Select Category--</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group row">
+                </div>
+                <div class="form-group row">
+                    <div class="col-8 offset-4 row">
+
+                        <div class="col">
+                            <input type="submit" class="btn btn-info w-100" value="Create" />
+                        </div>
+                        <div class="col">
+                            <a asp-action="Index" class="btn btn-success w-100"><i class="bi bi-box-arrow-in-left"></i> Back</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-4">
+                @* Keep this empty *@
+            </div>
+        </div>
+    </div>
+
+</form>
+
+
+@section Scripts {
+    <script>
+        $(document).ready(function () {
+            $('.summernote').summernote({
+                height: 250
+            });
+        });
+    </script>
+}

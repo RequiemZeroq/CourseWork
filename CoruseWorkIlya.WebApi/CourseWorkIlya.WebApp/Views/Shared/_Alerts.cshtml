@@ -1,0 +1,13 @@
+﻿@if(TempData[WebConstants.SuccessAlert] is not null)
+{
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script type="text/javascript">
+        Swal.fire({
+            position: "top-end",
+            icon: "success",
+            title: '@TempData[WebConstants.SuccessAlert]',
+            showConfirmButton: false,
+            timer: 1500
+        });
+    </script>
+}

@@ -1,0 +1,6 @@
+@CoruseWorkIlya.WebApi_HostAddress = http://localhost:5138
+
+GET {{CoruseWorkIlya.WebApi_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
